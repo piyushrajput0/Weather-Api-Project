@@ -61,6 +61,10 @@ function showweatherdata(data) {
         wind_speed
     } = data.current;
 
+    const {name}=data;
+    document.body.style.backgroundImage =
+      "url('https://source.unsplash.com/1600x900/?" + name + "')";
+
     currentweatheritems.innerHTML =
    `<div class="weather-item">
         <div>Humidity</div>
