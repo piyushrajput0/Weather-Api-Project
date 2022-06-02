@@ -8,10 +8,12 @@ const timezone = document.getElementById('time-zone');
 const country = document.getElementById('country');
 const weatherforecast = document.getElementById('weather-forecast');
 const currenttemp = document.getElementById('current-temp');
-
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['Jan', 'Feb', 'March', "April", 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 const API_KEY = '437cb282906282e569eec25b5fdb7e37';
+
+// for time
+
 setInterval(() => {
     const time = new Date();
     const month = time.getMonth();
@@ -63,7 +65,7 @@ function showweatherdata(data) {
 
     const {name}=data;
     document.body.style.backgroundImage =
-      "url('https://source.unsplash.com/1600x900/?" + name + "')";
+      "url('https://source.unsplash.com/1600x900/?" + data.current.weather[0].description + "')";
 
     currentweatheritems.innerHTML =
    `<div class="weather-item">
@@ -120,3 +122,4 @@ function showweatherdata(data) {
 
     weatherforecast.innerHTML = otherdayforcast;
 }
+
